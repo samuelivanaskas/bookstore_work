@@ -20,7 +20,7 @@ class ProductFactory(factory.django.DjangoModelFactory):
     title = factory.Faker('py str')
 
     @factory.post_generation
-    def category(self, create, extracted, **kwargs):
+    def category(self, create, extracted):
         if not create:
             return
 
